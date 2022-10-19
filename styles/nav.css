@@ -1,0 +1,120 @@
+.header {
+  padding: 0 3rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: max-content;
+  right: 0;
+  padding: 10px 2rem;
+  background-color: var(--theme-nav);
+  z-index: 100;
+}
+
+hovertoextend {
+  position: absolute;
+  left: 0;
+  display: none;
+  border-radius: 20px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+hovertoextend:hover {
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.nav_aside_links > * {
+  margin: 1rem;
+}
+
+.nav__logo {
+  height: 2rem;
+  transition: all 0.3s;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  height: max-content;
+}
+
+.nav a {
+  text-decoration: none;
+  transition: color 0.2s ease-out;
+  background-image: linear-gradient(rgba(252, 252, 252, 0.747), rgb(18, 18, 18)),
+    none;
+  background-size: 0 2px, auto;
+  color: rgb(0, 0, 0);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all 0.3s ease-out;
+}
+
+.nav__item {
+  padding: 4px 20px;
+}
+
+.nav__item {
+  display: flex;
+}
+
+navitem a {
+  text-decoration: none;
+  padding: 3px 5px;
+  font-size: 15px;
+  color: magenta;
+  border: 2px solid magenta;
+  border-radius: 30px;
+}
+
+navitem a:hover {
+  background: linear-gradient(45deg, tranparent, #d672c9);
+  text-decoration: none;
+  color: #d672c9;
+  box-shadow: 0 0 15px, 0 0 40px #f321b4, 0 0 80px #f321b4;
+  transition-delay: 0.2s;
+  font-size: 19px;
+  border: 2px solid white;
+}
+
+@media screen and (max-width: 651px) {
+  .nav__links {
+    position: absolute;
+    flex-direction: column;
+    top: 10px;
+    right: -160px;
+  }
+
+  hovertoextend {
+    padding: 10px 38px;
+    left: -140px;
+    top: 0px;
+    display: block;
+  }
+
+  .nav__links:hover {
+    right: 10px;
+    top: 10px;
+    padding: 40px 20px 10px;
+  }
+
+  .nav__links:hover hovertoextend {
+    left: 25px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+  }
+}

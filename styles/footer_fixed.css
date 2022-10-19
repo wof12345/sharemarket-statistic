@@ -1,0 +1,29 @@
+.footer_fixed {
+  height: 50px;
+  padding: 3px;
+  transition: 0.1s;
+  letter-spacing: 2px;
+}
+
+.footer_fixed-headline {
+  transform: translateX(-100%);
+}
+
+.footer_fixed-headline:hover {
+  cursor: pointer;
+}
+
+.moving_animation-inandout {
+  animation: headline_animation both infinite;
+  animation-duration: 90s;
+}
+
+@keyframes headline_animation {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(110%);
+  }
+}
