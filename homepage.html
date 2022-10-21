@@ -27,7 +27,12 @@
       crossorigin="anonymous"
     ></script>
     <script defer src="./scripts/helperfunctions.js"></script>
+    <script defer src="./scripts/search&filter.js"></script>
     <script defer src="./scripts/data.js"></script>
+    <script
+      defer
+      src="./scripts/common_value_extraction_and_validation_code.js"
+    ></script>
     <script defer src="./scripts/news.js"></script>
     <script defer src="./scripts/footer_fixed.js"></script>
     <script defer src="./scripts/api_code.js"></script>
@@ -36,6 +41,15 @@
     <header>
       <nav class="nav fixed-top bg-light">
         <p>The Big-Bull</p>
+
+        <form action="">
+          <input
+            class="searchbar"
+            type="text"
+            name="search_bar"
+            id="search_bar"
+          />
+        </form>
 
         <navitems class="nav__links">
           <hovertoextend> Menu </hovertoextend>
@@ -50,10 +64,9 @@
             <a class="nav__link" href="#">Review</a>
           </navitem>
           <navitem>
-            <a class="nav__link" href="#">Login</a>
-          </navitem>
-          <navitem>
-            <a class="nav__link" href="#">Register</a>
+            <a class="nav__link login_status" href="./pages/login.html"
+              >Login/Register</a
+            >
           </navitem>
         </navitems>
       </nav>
@@ -63,6 +76,10 @@
       <h3>News & Research</h3>
 
       <section class="news">
+        <div class="loading_ind w-100 position-absolute h-50">
+          <p class="text-center">Loading...</p>
+          <img class="w-100 h-100" src="./img/puff.svg" alt="" />
+        </div>
         <!-- <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-lg-6">

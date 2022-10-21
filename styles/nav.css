@@ -92,15 +92,20 @@ navitem a:hover {
 }
 
 @media screen and (max-width: 651px) {
+  nav {
+    flex-direction: column;
+  }
+
   .nav__links {
     position: absolute;
     flex-direction: column;
+    gap: 10px;
     top: 10px;
     right: -160px;
   }
 
   hovertoextend {
-    padding: 10px 38px;
+    padding: 10px 30px;
     left: -140px;
     top: 0px;
     display: block;
@@ -109,12 +114,16 @@ navitem a:hover {
   .nav__links:hover {
     right: 10px;
     top: 10px;
-    padding: 40px 20px 10px;
+    padding: 50px 20px 10px;
   }
 
   .nav__links:hover hovertoextend {
     left: 25px;
     background-color: rgb(255, 255, 255);
     color: black;
+  }
+
+  main {
+    margin-top: 140px;
   }
 }

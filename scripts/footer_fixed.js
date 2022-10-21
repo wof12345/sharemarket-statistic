@@ -1,5 +1,6 @@
 let fixedFooterContainer = document.querySelector(`.footer_fixed`);
 let fixedFooterHeadline;
+let totalCharCount = 0;
 
 let headlinePrefab = function (headline) {
   return `<div class="footer_fixed-headline w-mc h-100 position-absolute  p-2 moving_animation-inandout">
@@ -9,7 +10,7 @@ ${headline}
 
 function extractAndUpdateHeadLines(data) {
   for (let i = 0; i < data.length; i++) {
-    if (i % 2 === 0) archivedData.headlines.push(data[0].headline);
+    archivedData.headlines.push(data[0].headline);
   }
 
   injectHeadline(processHeadline());
@@ -21,9 +22,11 @@ function processHeadline() {
   for (let i = 0; i < archivedData.headlines.length; i++) {
     for (let j = 0; j < archivedData.headlines[i].length; j++) {
       finalHeadline += `<span class="text_effect-scaleup">${archivedData.headlines[i][j]}</span>`;
+      totalCharCount++;
     }
     finalHeadline += "  ***  ";
   }
+  console.log(totalCharCount);
 
   return finalHeadline;
 }
@@ -31,6 +34,7 @@ function processHeadline() {
 function injectHeadline(headline) {
   fixedFooterContainer.innerHTML = headlinePrefab(headline);
   fixedFooterHeadline = document.querySelector(`.footer_fixed-headline`);
+  fixedFooterHeadline.style = `animation-duration: ${totalCharCount / 2}s`;
 }
 
 setInterval(() => {

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/global_styles.css" />
+    <link rel="stylesheet" href="../styles/userpage.css" />
+    <link rel="stylesheet" href="../styles/nav.css" />
+    <title>Document</title>
+
+    <script defer src="../scripts/fetchfunctions.js"></script>
+    <script defer src="../scripts/userpage.js"></script>
+    <script defer src="../scripts/api_code.js"></script>
+    <script defer src="../scripts/sellinteraction.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="nav fixed-top bg-light">
+        <p>The Big-Bull</p>
+
+        <navitems class="nav__links">
+          <hovertoextend> Menu </hovertoextend>
+
+          <navitem class="nav__item">
+            <a class="nav__link" href="../homepage.html">Home</a>
+          </navitem>
+          <navitem class="nav__item">
+            <a class="nav__link navigation" href="#">Buy</a>
+          </navitem>
+          <navitem class="nav__item">
+            <a class="nav__link navigation" href="#">History</a>
+          </navitem>
+          <navitem>
+            <a class="nav__link login_status" href="#">Logout</a>
+          </navitem>
+        </navitems>
+      </nav>
+    </header>
+
+    <page class="page">
+      <form class="user_form" action="">
+        <label for="s-search">Stock</label>
+        <input type="text" name="s-search" id="stock" title="stock_search" />
+        <button type="submit" class="s_search">Search</button>
+      </form>
+
+      <div class="inner_cont">
+        <div class="info_container"></div>
+        <div class="userInteraction">
+          <label for="stock_number">Number of shares: </label>
+          <input type="text" name="stock_number" id="stock_number" />
+          <button class="buy_stock">Buy</button>
+        </div>
+      </div>
+    </page>
+
+    <page class="page">
+      <table class="table"></table>
+    </page>
+
+    <div class="input_gen_cont">
+      <div class="arrow_shape">
+        <div class="shape_item i_1"></div>
+        <div class="shape_item i_2"></div>
+      </div>
+      <div class="input_gen_cont-inner"><div class="shares"></div></div>
+    </div>
+  </body>
+</html>

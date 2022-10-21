@@ -15,7 +15,6 @@
 
 .moving_animation-inandout {
   animation: headline_animation both infinite;
-  animation-duration: 90s;
 }
 
 @keyframes headline_animation {

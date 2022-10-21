@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/global_styles.css" />
+    <link rel="stylesheet" href="../styles/loginpage.css" />
+    <title>Document</title>
+
+    <script defer src="../scripts/fetchfunctions.js"></script>
+    <script defer src="../scripts/login.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/jqueryui/jquery-ui.js"></script>
+    <script src="../scripts/common_value_extraction_and_validation_code.js"></script>
+  </head>
+
+  <body>
+    <main class="main_container">
+      <section class="header_animated_text">
+        <div class="head_cont">
+          <div class="before"></div>
+          <h1 class="header">Welcome to this website!</h1>
+          <div class="after"></div>
+        </div>
+        <p class="subtitle">Please login to continue ></p>
+      </section>
+
+      <section class="user_query_container">
+        <div class="outer_query_container">
+          <div class="inner_query_container">
+            <div class="input_identifier query_box">
+              <label for="username">Username :</label>
+              <input
+                type="text"
+                name="username"
+                id="identifier"
+                class="input"
+              />
+            </div>
+
+            <div class="input_password query_box">
+              <label for="password">Password :</label>
+              <input type="text" name="password" id="password" class="input" />
+            </div>
+
+            <div class="navigation query_box">
+              <button type="button" class="login">Login</button>
+              <button type="button" class="register">
+                Register
+                <img class="btn_img" src="../img/rightarrow.svg" alt="" />
+              </button>
+            </div>
+          </div>
+
+          <div class="inner_query_container--register">
+            <div class="input_identifier query_box">
+              <label for="username">Username :</label>
+              <input
+                type="text"
+                name="username"
+                id="register_identifier"
+                class="input"
+              />
+            </div>
+
+            <div class="input_mobile_no query_box">
+              <label for="mobile_no">Mobile no :</label>
+              <input
+                type="text"
+                name="mobile_no"
+                id="mobile_no"
+                class="input"
+              />
+            </div>
+
+            <div class="input_select_birthdate query_box">
+              <label for="birthdate">Birth-date : </label>
+              <input
+                type="text"
+                name="birthdate"
+                id="select_birthdate"
+                class="input"
+              />
+            </div>
+
+            <div class="input_password query_box">
+              <label for="password">Password :</label>
+              <input
+                type="text"
+                name="password"
+                id="register_password"
+                class="input"
+              />
+            </div>
+
+            <div class="input_password query_box">
+              <label for="reenter_password">Re-enter password :</label>
+              <input
+                type="text"
+                name="reenter_password"
+                id="reenter_password"
+                class="input"
+              />
+            </div>
+
+            <div class="navigation_register query_box">
+              <button type="button" class="register_login">
+                <img
+                  class="btn_img_register"
+                  src="../img/arrow-left.svg"
+                  alt=""
+                />
+                Login
+              </button>
+              <button type="button" class="register_register">Register</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="forgot_password">
+          Forgot password ? <a href="/">Click here</a>
+        </div>
+      </section>
+
+      <usermessage class="user_message"></usermessage>
+    </main>
+  </body>
+</html>
