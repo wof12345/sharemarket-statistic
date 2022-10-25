@@ -152,7 +152,8 @@ function handleQuery(reference) {
     data,
     [notEmpty.bind(this, data), "Cannot be empty!"],
     [checkIfFullNumber.bind(this, data), "Cannot be all digits!"],
-    [checkSpecial.bind(this, data), "Cannot have special characters!"]
+    [checkSpecial.bind(this, data), "Cannot have special characters!"],
+    [passwordCheck.bind(this, data), "Password does not meet requirement!"]
   );
   invokeUserMessage(state);
 
@@ -180,21 +181,6 @@ function notEmpty(data) {
       console.log(data[it]);
       return false;
     }
-  }
-  return true;
-}
-
-function checkSpecial(data) {
-  var specialFormat = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-  if (specialFormat.test(data.username)) {
-    return false;
-  }
-  return true;
-}
-
-function checkIfFullNumber(data) {
-  if (!isNaN(data.username)) {
-    return false;
   }
   return true;
 }

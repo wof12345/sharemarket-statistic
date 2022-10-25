@@ -1,3 +1,11 @@
+let isLoggedIn = JSON.parse(localStorage.getItem("isLoggedin"));
+console.log(isLoggedIn);
+
+if (!isLoggedIn) {
+  //redirection
+  window.location = "../pages/login.html";
+}
+
 let stock_input = document.querySelector(`#stock`);
 let stock_input_number = document.querySelector(`#stock_number`);
 let stock_input_number_btn = document.querySelector(`.buy_stock`);
@@ -79,7 +87,15 @@ stock_input_btn.addEventListener("click", (e) => {
 
 function requestStockData(symbol) {
   if (symbol && symbol !== "")
-    requestDataWithContextSymbol(symbol).then((data) => {
+    requestDataWithContext(
+      iexUrlProps.url,
+      iexUrlProps.param1Statistics,
+      iexUrlProps.param2Statistics,
+      "/" + symbol,
+      iexUrlProps.param3Statistics,
+      iexUrlProps.tokenStatistics,
+      iexUrlProps.param4Statistics
+    ).then((data) => {
       console.log(data);
       populateInfoContainer(data);
     });
@@ -219,7 +235,7 @@ document.addEventListener("click", (e) => {
       .textContent.split(" ")[2];
     let value = +share.textContent.split(" ")[2] - +input.value;
     let dataToPush, dataCost;
-    console.log("data_buy", +input.value * +relevantData.cost);
+    console.log("data_buy", input.value, relevantData);
 
     if (value >= 0 && value != undefined) {
       let stockShare = stock_input_number.value;

@@ -1,6 +1,28 @@
-async function requestDataWithContext(context) {
+let iexUrlProps = {
+  url: `https://cloud.iexapis.com`,
+  param1News: "/v1",
+  param2News: "/data",
+  param3News: "/CORE",
+  param4News: "last=40",
+  param1Statistics: "/stable",
+  param2Statistics: "/stock",
+  param3Statistics: "",
+  param4Statistics: "/quote",
+  tokenNews: "sk_909213ce3a0a4e46853b42438af41ba4",
+  tokenStatistics: "pk_2d6c7eb0bcf0428885f31929d749694f",
+};
+
+async function requestDataWithContext(
+  url,
+  param1,
+  param2,
+  param3,
+  param4,
+  token,
+  context
+) {
   const response = await fetch(
-    `https://cloud.iexapis.com/v1/data/CORE/${context}?last=40&token=sk_909213ce3a0a4e46853b42438af41ba4`,
+    `${url}${param1}${param2}${param3}${context}?${param4}&token=${token}`,
     {
       method: "GET",
       mode: "cors",
@@ -16,35 +38,21 @@ async function requestDataWithContext(context) {
   return response.json();
 }
 
-async function requestDataWithContextSymbol(symbol) {
-  const response = await fetch(
-    `https://cloud.iexapis.com/stable/stock/${symbol}/quote?token=pk_2d6c7eb0bcf0428885f31929d749694f`,
-    {
-      method: "GET",
-      mode: "cors",
-      cache: "no-cache",
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      referrerPolicy: "no-referrer",
-    }
-  );
-  return response.json();
-}
-
-requestDataWithContext("NEWS").then((data) => {
-  loadingSpinner.style.display = "none";
+requestDataWithContext(
+  iexUrlProps.url,
+  iexUrlProps.param1News,
+  iexUrlProps.param2News,
+  iexUrlProps.param3News,
+  iexUrlProps.param4News,
+  iexUrlProps.tokenNews,
+  "/NEWS"
+).then((data) => {
   console.log(data);
   apiDataNews = data;
-  populateData(apiDataNews);
-  extractAndUpdateHeadLines(apiDataNews);
-});
 
-// requestDataWithContext("ECONOMIC").then((data) => {
-//   console.log(data);
-//   apiDataNews = data;
-//   // populateData(apiDataNews);
-//   // extractAndUpdateHeadLines(apiDataNews);
-// });
+  if (loadingSpinner) {
+    loadingSpinner.style.display = "none";
+    populateData(apiDataNews);
+    extractAndUpdateHeadLines(apiDataNews);
+  }
+});

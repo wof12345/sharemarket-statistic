@@ -1,3 +1,7 @@
+//backup code
+let loadingSpinner = undefined;
+
+//fetch codes
 async function getData(data) {
   fetch(`http://localhost:3000/${data}`, {
     method: "GET",
