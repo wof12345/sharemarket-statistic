@@ -8,7 +8,7 @@ let iexUrlProps = {
   param2Statistics: "/stock",
   param3Statistics: "",
   param4Statistics: "/quote",
-  tokenNews: "sk_909213ce3a0a4e46853b42438af41ba4",
+  tokenNews: "sk_ea9218b6a48f4defa07828a6521198cd",
   tokenStatistics: "pk_2d6c7eb0bcf0428885f31929d749694f",
 };
 
